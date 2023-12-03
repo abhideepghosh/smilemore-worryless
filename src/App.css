@@ -10,7 +10,9 @@
   align-items: center;
   padding: 10px;
   background-color: transparent;
-  border-top: 3px solid white;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 10px;
 }
 
 .prompt-form input {
