@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
@@ -46,19 +45,19 @@ function App() {
             ))}
           </div>
         ))}
-        <form className="prompt-form" onSubmit={handleSubmit}>
-          <input
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            type="text"
-            className="prompt-input"
-            placeholder="Enter your prompt"
-          />
-          <button type="submit">
-            <FontAwesomeIcon icon={faPaperPlane} />
-          </button>
-        </form>
       </div>
+      <form className="prompt-form" onSubmit={handleSubmit}>
+        <input
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          type="text"
+          className="prompt-input"
+          placeholder="Enter your prompt"
+        />
+        <button type="submit">
+          <FontAwesomeIcon icon={faPaperPlane} />
+        </button>
+      </form>
     </>
   );
 }
