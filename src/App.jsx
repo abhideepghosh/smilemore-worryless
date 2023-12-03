@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
 function App() {
-  const [prompt, setPrompt] = useState(
-    "Reply in a funny way to the following prompt: Hello my friend"
-  );
+  const [prompt, setPrompt] = useState("");
   const [result, setResult] = useState([]);
   const apiPath = `https://palm-ai-backend.onrender.com/palmai/prompt`;
 
@@ -22,13 +22,16 @@ function App() {
 
     const data = await response.json();
     const formattedData = data[0].output.split("\n");
-    setResult([...result, formattedData]);
+    setResult([...result, [prompt], formattedData]);
     console.log(formattedData);
   };
 
-  useEffect(() => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setResult([...result, [prompt]]);
     sendPromptToAI();
-  }, []);
+    setPrompt("");
+  };
 
   return (
     <>
@@ -43,6 +46,18 @@ function App() {
             ))}
           </div>
         ))}
+        <form className="prompt-form" onSubmit={handleSubmit}>
+          <input
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+            type="text"
+            className="prompt-input"
+            placeholder="Enter your prompt"
+          />
+          <button type="submit">
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </button>
+        </form>
       </div>
     </>
   );
