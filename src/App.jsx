@@ -42,7 +42,6 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1>Palm AI</h1>
         {result.map((ans, key) => (
           <div key={key} className="prompt-container">
             {ans.map((line, id) => (

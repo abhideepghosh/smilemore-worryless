@@ -9,32 +9,41 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
+  background-color: transparent;
+  border-top: 3px solid white;
 }
 
 .prompt-form input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid white;
   border-radius: 5px;
+  color: white;
+  background-color: transparent;
+}
+.prompt-form input::placeholder {
+  color: rgba(255, 255, 255, 0.751);
+  opacity: 1; /* Firefox */
 }
 
 .prompt-form button {
+  color: white;
+  background-color: transparent;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid white;
   border-radius: 5px;
   cursor: pointer;
 }
 /* Prompt Container Styles */
 .prompt-container {
+  font-size: 14px;
+  color: white;
   display: flex;
   flex-direction: column;
   padding: 20px;
   margin: 10px;
-
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
+  background-color: transparent;
+  border: 3px solid white;
   border-radius: 5px;
 }
 
@@ -44,6 +53,5 @@
 
 /* Main Container Styles */
 .container {
-  margin-bottom: 60px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
