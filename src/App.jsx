@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
@@ -31,6 +31,13 @@ function App() {
     sendPromptToAI();
     setPrompt("");
   };
+
+  useEffect(() => {
+    console.log("UseEffect Called");
+    document
+      .querySelector(".container")
+      .scrollIntoView({ behavior: "smooth", block: "end" });
+  }, [result]);
 
   return (
     <>
